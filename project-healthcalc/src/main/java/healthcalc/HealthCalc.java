@@ -32,5 +32,6 @@ public interface HealthCalc {
 	 * @return	  		The Basal Metabolic Rate of the person (kcal/day).
 	 * @throws Exception
 	 */
+	
 	public float basalMetabolicRate(float weight, int height, int age, char gender) throws Exception;
 }
