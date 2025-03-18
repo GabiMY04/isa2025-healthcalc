@@ -1,0 +1,32 @@
+USE CASE 1: CALCULAR PESO IDEAL DE UN USUARIO 
+
+Primary Actor: Usuario
+Scope: Asesor Personal 
+Level: User goal
+Stakeholders and Interests:
+Nutricionista- Utiliza el software para calcular el peso ideal de sus clientes.
+Deportista- Quiere conocer su peso ideal para monitorizar su salud.
+
+
+Precondition: 
+El usuario a inicializado el programa software correctamente
+El usuario a introducido su altura en centímetros correctamente en la casilla para ello
+El usuario a indicado su genero correctamente 
+
+Minimal guarantee: El usuario conoce su altura y su genero.
+
+Success guarantee: El software muestra el peso ideal y lo ha calculado correctamente.
+
+
+Main success scenario:
+1. El usuario elige calcular su peso ideal.
+2. El usuario introduce su altura y genero en las zonas designadas.
+3. El software calcula el resultado aplicando una formula
+4. El software muestra por pantalla el resultado del peso ideal.
+
+Extensions:
+
+1a.El usuario se equivoca de pestaña: Mostrara una pestaña incorrecta
+2a.Altura incorrecta: Se muestra una pestaña explicando el error y el motivo por el que no se puede calcular el peso ideal.
+2b.Genero incorrecto: Se muestra un mensaje en el que solo se puede elegir los valores 'm' u 'h'.
+
