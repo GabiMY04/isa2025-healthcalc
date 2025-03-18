@@ -170,3 +170,6 @@ En el .gitignore se puede observar que se ingnoran los archivos basicos para los
 Al compilar todos los test mencionados en los casos de prueba se observa que todos funcionan correctamente.
 
 # PRACTICA 2
+Imagen del diagrama de caso de uso 
+![alt text](doc/image_pract2.png)
+
