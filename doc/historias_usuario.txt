@@ -1,0 +1,55 @@
+User Story Template
+
+As a  cliente
+I want calcular el peso ideal de una persona
+So that introduzco mis datos en el programa
+
+Acceptance Criteria_1
+Scenario : Genero invalido
+Given: el genero es distinto de 'M' 
+And el genero es distinto de 'H'
+When presiono el boton de calcular
+Then Se muestra por pantalla un error en el genero
+
+
+Acceptance Criteria_2
+Scenario : Introduzco una altura invalida
+Given: La altura introducida es mayor a 3 metros
+When presiono el boton de calcular
+Then Se muestra por pantalla un error de altura incorrecta
+
+
+Acceptance Criteria_3
+Scenario : Introduzco altura y genero correctamente
+Given: Introduzco los datos correctos
+When: presiono el boton de calcular
+Then: Se muestra el resultado de la funcion peso ideal por pantalla
+
+
+
+User Story Template
+
+As a  cliente
+I want calcular tasa metabolica de una persona
+So that introduzco los datos en el programa
+
+Acceptance Criteria_1
+Scenario : Genero invalido
+Given: el genero es distinto de 'M' 
+And el genero es distinto de 'H'
+When presiono el boton de calcular
+Then Se muestra por pantalla un error por pantalla en el genero
+
+
+Acceptance Criteria_2
+Scenario : Peso invalido
+Given: El peso es mayor a 300 kg
+When presiono el boton de calcular
+Then Se muestra por pantalla un error por pantalla por el peso 
+
+
+Acceptance Criteria_2
+Scenario : Introduccion de datos correctos
+Given: Todos los datos introducidos son correctos
+When presiono el boton de calcular
+Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
