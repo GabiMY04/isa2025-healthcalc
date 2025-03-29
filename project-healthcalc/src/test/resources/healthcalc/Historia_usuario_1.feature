@@ -26,32 +26,21 @@ Feature: Calculo del peso ideal
     Given el genero introducido es distinto de M 
     And el genero es distinto de H
     When presiono el boton calcular
-    Then El error se muestra por pantalla sobre el genero
-    
+    Then El error se muestra por pantalla que el genero es invalido
   @tag2
-  Scenario Outline: Computing the factorial of a positive small integer
-    Given I have a factorial calculator
-    When I compute the factorial of <n>
-    Then The system returns <value>
-   
-   	Examples: 
-      | n | value |
-      | 1 | 1     |
-      | 2 | 2     |
-      | 3 | 6     |
-      | 4 | 24    |
-      | 5 | 120   |
-      | 6 | 720   |
+  Scenario: Altura invalida
+    Given La altura introducida es mayor a 3 metros
+    When presiono el boton calcular
+    Then Se muestra por pantalla un error de altura incorrecta
+  @tag3
+  Scenario: Datos validos
+    Given Introduzco los datos correctos
+    When presiono el boton calcular
+    Then Se muestra el resultado de la funcion peso ideal por pantalla
 
-	@tag3
-  Scenario Outline: Computing the factorial of a negative integer
-    Given I have a factorial calculator
-    When I compute the factorial of a negative number <n>
-    Then The system raises an exception
-   
-   	Examples: 
-      | n  |
-      | -1 |
-      | -2 |
-      | -5 |
+  @tag4
+  Scenario: Genero vacio
+    Given el genero no tiene valor
+    When presiono el boton calcular
+    Then se muestra un error por la pantalla indicando que el genero es obligatorio
       
