@@ -25,6 +25,11 @@ Given: Introduzco los datos correctos
 When: presiono el boton de calcular
 Then: Se muestra el resultado de la funcion peso ideal por pantalla
 
+Acceptance Criteria_4
+Scenario : Genero vacio
+Given: No hay valor en la variable genero
+When: presiono el boton de calcular
+Then: Se muestra un error pantalla indicando que hay que poner el genero
 
 
 User Story Template
@@ -42,14 +47,24 @@ Then Se muestra por pantalla un error por pantalla en el genero
 
 
 Acceptance Criteria_2
-Scenario : Peso invalido
-Given: El peso es mayor a 300 kg
+Scenario :  peso valido
+Given: El peso introducir es menor a 300kg 
+and el peso es mayor a 0 kg
 When presiono el boton de calcular
-Then Se muestra por pantalla un error por pantalla por el peso 
+Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
 
 
-Acceptance Criteria_2
+Acceptance Criteria_3
 Scenario : Introduccion de datos correctos
 Given: Todos los datos introducidos son correctos
 When presiono el boton de calcular
 Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
+
+
+Acceptance Criteria_4
+Scenario : Edad invalida
+Given: La edad introducida es mayor que 120
+When presiono el boton de calcular
+Then Se muestra por pantalla de un error en la edad introducida
+
+
