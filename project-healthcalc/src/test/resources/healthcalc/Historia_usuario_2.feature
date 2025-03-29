@@ -32,7 +32,7 @@ Feature: calcular tasa metabolica basal
     Given el peso introducir es menor a 300kg 
     And el peso es mayor a 0 kg
     When presiono el boton calcular
-    Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
+    Then Se muestra el resultado de la funcion calcular tasa metabolica por pantalla
   @tag3
   Scenario: Introduzco altura y genero correctamente
     Given Introduzco los datos correctos
