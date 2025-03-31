@@ -8,30 +8,36 @@ Acceptance Criteria_1
 Scenario : Genero invalido
 Given: el genero es distinto de 'M' 
 And el genero es distinto de 'H'
-When presiono el boton de calcular
-Then Se muestra por pantalla un error en el genero
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que el genero es incorrecto
+
 
 
 Acceptance Criteria_2
 Scenario : Introduzco una altura invalida
 Given: La altura introducida es mayor a 3 metros
-When presiono el boton de calcular
-Then Se muestra por pantalla un error de altura incorrecta
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que la altura es incorrecto
 
 
 Acceptance Criteria_3
 Scenario : Introduzco altura y genero correctamente
 Given: Introduzco los datos correctos
-When: presiono el boton de calcular
+When Calculo el peso ideal
 Then: Se muestra el resultado de la funcion peso ideal por pantalla
 
 Acceptance Criteria_4
 Scenario : Genero vacio
 Given: No hay valor en la variable genero
-When: presiono el boton de calcular
-Then: Se muestra un error pantalla indicando que hay que poner el genero
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que el genero es obligatorio
 
 
+
+
+
+
+HISTORIA DE USUARIO 2
 User Story Template
 
 As a  cliente
@@ -39,32 +45,29 @@ I want calcular tasa metabolica de una persona
 So that introduzco los datos en el programa
 
 Acceptance Criteria_1
-Scenario : Genero invalido
-Given: el genero es distinto de 'M' 
-And el genero es distinto de 'H'
-When presiono el boton de calcular
-Then Se muestra por pantalla un error por pantalla en el genero
+Scenario : Edad invalido
+Given: La edad es invalida
+When Calcular TasaMetabolica
+    Then El sistema lanza una excepcion indicando que la edad es incorrecto
 
 
 Acceptance Criteria_2
-Scenario :  peso valido
-Given: El peso introducir es menor a 300kg 
-and el peso es mayor a 0 kg
-When presiono el boton de calcular
-Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
+Scenario :  peso invalido
+Given: El peso introducir es mayor a 300kg 
+When Calcular TasaMetabolica
+Then El sistema lanza una excepcion indicando que el peso es incorrecto
 
 
 Acceptance Criteria_3
 Scenario : Introduccion de datos correctos
 Given: Todos los datos introducidos son correctos
-When presiono el boton de calcular
-Then Se muestra por pantalla el resultado de la funcion calcular tasa metabolica
-
+When Calcular TasaMetabolica
+Then Se muestra el resultado
 
 Acceptance Criteria_4
-Scenario : Edad invalida
-Given: La edad introducida es mayor que 120
-When presiono el boton de calcular
-Then Se muestra por pantalla de un error en la edad introducida
+Scenario : Edad vacia
+Given: La edad no tiene valor
+When Calcular TasaMetabolica
+    Then se muestra un error por la pantalla indicando que la edad es obligatorio
 
 
