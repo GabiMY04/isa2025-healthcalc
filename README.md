@@ -208,3 +208,235 @@ Extensions:
 
 2b.Genero incorrecto: Se muestra un mensaje en el que solo se puede elegir los valores 'm' u 'h'.
 
+
+
+# PRACTICA 3
+
+
+### Historia de usuario 1
+```
+@tag
+Feature: Calcular peso ideal
+  As a cliente I want to  introducir mis datos en el programa so that puedo conocer el resultado
+
+  @tag1
+  Scenario Outline: Genero invalido
+    Given Tengo una calculadora de salud 
+    And Introduzco el genero "<genero>"
+    And Introduzco la altura "<altura>"
+    When Calcular el peso ideal 
+    Then El sistema lanza una excepcion indicando que el genero es incorrecto
+
+        Examples:
+      | genero | altura |
+      | x      | 160    |
+      | 9      | 170    |
+
+  @tag2
+  Scenario Outline: Altura invalida 
+    Given Tengo una calculadora de salud
+    And Introduzco la altura "<altura>"
+    And Introduzco el genero "<genero>"
+    When Calcular el peso ideal 
+    Then El sistema lanza una excepcion indicando que la altura es incorrecta
+
+        Examples:
+      | genero | altura |
+      | m      | 0      |
+      | w      | 300    |
+
+  
+  @tag3
+  Scenario Outline: Calcular con la altura y el genero validos
+    Given Tengo una calculadora de salud
+    And Introduzco la altura "<altura>"
+    And Introduzco el genero "<genero>"
+    When Calcular el peso ideal 
+    Then Se muestra el resultado <expected>
+    Examples:
+      | altura | genero | expected |
+      | 150    | m      | 50.0    |
+      | 160    | m      | 57.5    |
+      | 160    | w      | 56.0    |
+
+  @tag4
+  Scenario Outline: Genero vacio
+    Given Tengo una calculadora de salud 
+    And el genero no tiene valor
+    And Introduzco la altura "<altura>"
+    When Calcular el peso ideal 
+    Then El sistema lanza una excepcion indicando que el genero es obligatorio
+
+        Examples:
+      | altura |
+      | 160    |
+      | 170    |
+  
+```
+Aqui se pueden observar los 4 escenarios genericos que se establecieron, estos son:
+1. Genero invalido
+   1. El genero es distinto de W o M 
+2. Altura invalida
+   1. La altura es mayor a 3 metros 
+3. Calcular con la altura y el genero valido
+   1. La altura es menor a 3 metros y el genero es W o M
+4. Genero vacio
+   1. No se a escrito el genero que es obligatorio para implementar la funcion
+
+## HistoriaUsuario2
+```
+@tag
+Feature:Calculo tasa metabolica basal
+  As a cliente I want to  calcular la tasa metabolica basal
+  so that puedo controlar mi salud
+
+  @tag1
+  Scenario Outline: Edad invalida
+    Given Tengo una calculadora de salud
+    And Edad introducida es "<edad>"
+    And Introduzco la altura "<altura>"
+    And Introduzco el peso "<peso>"
+    And Introduzco el genero "<genero>"
+    When Calcular TasaMetabolica
+    Then El sistema lanza una excepcion indicando que la edad es incorrecto
+
+    Examples:
+      | genero | altura | peso | edad |
+      | m      | 160    | 120  | 900   |
+      | w      | 170    | 70   | 0   |
+
+  @tag2
+  Scenario Outline: Introduzco peso invalido
+    Given Tengo una calculadora de salud
+    And Introduzco el peso "<peso>"
+    And Introduzco el genero "<genero>"
+    And Introduzco la altura "<altura>"
+    And Edad introducida es "<edad>"
+    When Calcular TasaMetabolica
+    Then El sistema lanza una excepcion indicando que el peso es incorrecto
+    Examples:
+      | genero | altura | peso | edad |
+      | m      | 160    | 700  | 25   |
+      | w      | 170    | 800  | 30   |
+  @tag3
+  Scenario Outline: Calcular con el genero, altura, peso y edad validos 
+    Given Tengo una calculadora de salud
+    And Introduzco el genero "<genero>"
+    And Introduzco la altura "<altura>"
+    And Introduzco el peso "<peso>"
+    And Edad introducida es "<edad>"
+    When Calcular TasaMetabolica
+    Then Se muestra el resultado <expected>
+    Examples:
+      | genero | altura | peso | edad | expected |
+      | m      | 160    | 120  | 25   | 2321.916748046875  |
+      | w      | 170    | 70   | 30   | 1491.6429443359375  |
+      | m      | 160    | 52   | 25   | 1410.9208984375  |
+      | w      | 170    | 80   | 30   | 1584.113037109375  |
+   
+@tag4
+  Scenario Outline: Edad vacio
+    Given Tengo una calculadora de salud
+    And la edad no tiene valor
+    And Introduzco el peso "<peso>"
+    And Introduzco la altura "<altura>"
+    And Introduzco el genero "<genero>"
+    When Calcular TasaMetabolica
+    Then se muestra un error por la pantalla indicando que la edad es obligatorio
+    Examples:
+      | genero | altura | peso |
+      | m      | 160    | 120  |
+      | w      | 170    | 70   |
+
+  
+```
+1. Edad invalida
+   1. Si la edad es mayor a 120 años o negativa
+2. Peso invalido
+   1. Si es mayor a 300kg o negativa
+3. Calcular con el genero, altura, peso y edad validos 
+   1. Con los examples se ve que valor tiene que salir de forma general
+4. Edad vacio
+   1. Si no ponemos la edad que es un campo obligatorio
+
+## Historias de usuario
+```
+User Story Template
+
+As a  cliente
+I want calcular el peso ideal de una persona
+So that introduzco mis datos en el programa
+
+Acceptance Criteria_1
+Scenario : Genero invalido
+Given: el genero es distinto de 'M' 
+And el genero es distinto de 'H'
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que el genero es incorrecto
+
+
+
+Acceptance Criteria_2
+Scenario : Introduzco una altura invalida
+Given: La altura introducida es mayor a 3 metros
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que la altura es incorrecto
+
+
+Acceptance Criteria_3
+Scenario : Introduzco altura y genero correctamente
+Given: Introduzco los datos correctos
+When Calculo el peso ideal
+Then: Se muestra el resultado de la funcion peso ideal por pantalla
+
+Acceptance Criteria_4
+Scenario : Genero vacio
+Given: No hay valor en la variable genero
+When Calculo el peso ideal
+Then El sistema lanza una excepcion indicando que el genero es obligatorio
+
+
+
+
+
+
+HISTORIA DE USUARIO 2
+User Story Template
+
+As a  cliente
+I want calcular tasa metabolica de una persona
+So that introduzco los datos en el programa
+
+Acceptance Criteria_1
+Scenario : Edad invalido
+Given: La edad es invalida
+When Calcular TasaMetabolica
+    Then El sistema lanza una excepcion indicando que la edad es incorrecto
+
+
+Acceptance Criteria_2
+Scenario :  peso invalido
+Given: El peso introducir es mayor a 300kg 
+When Calcular TasaMetabolica
+Then El sistema lanza una excepcion indicando que el peso es incorrecto
+
+
+Acceptance Criteria_3
+Scenario : Introduccion de datos correctos
+Given: Todos los datos introducidos son correctos
+When Calcular TasaMetabolica
+Then Se muestra el resultado
+
+Acceptance Criteria_4
+Scenario : Edad vacia
+Given: La edad no tiene valor
+When Calcular TasaMetabolica
+    Then se muestra un error por la pantalla indicando que la edad es obligatorio
+
+
+
+```
+En la historia de usuario se puede ver la idea general de cada escenario , debido a implementacion posterior no es el modelo final como se puede observar en los archivos `.feature` ,por lo tanto se han subido estos ficheros para que se pueda mostrar las modificaciones posteriores para que `cucumber` pueda interpretarlo de manera correcta, aunque solo se han implementado 4 escenarios por cada historia de usuario pero se podrian implementar muchas mas.   
+
+
+Posteriormente en la clase `StepDefinitions.java` que esta en la carpeta `java\healthcalc\bdd` del repositorio 
