@@ -49,54 +49,38 @@ public class VistaHealthCalc extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(13, 10));
 		
-		JPanel panel_E = new JPanel();
-		panel_E.setBackground(Color.LIGHT_GRAY);
-		contentPane.add(panel_E, BorderLayout.EAST);
-		panel_E.setLayout(new BorderLayout(0, 0));
+		JPanel panel_central_principal = new JPanel();
+		contentPane.add(panel_central_principal, BorderLayout.CENTER);
+		panel_central_principal.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_n = new JPanel();
-		panel_E.add(panel_n, BorderLayout.NORTH);
+		JPanel panel_secundario_w = new JPanel();
+		panel_central_principal.add(panel_secundario_w, BorderLayout.WEST);
+		panel_secundario_w.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1 = new JLabel("CALCULAR_METABOLICO");
-		panel_n.add(lblNewLabel_1);
+		JPanel panel_terciario_norte = new JPanel();
+		panel_secundario_w.add(panel_terciario_norte, BorderLayout.NORTH);
+		panel_terciario_norte.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_S = new JPanel();
-		panel_E.add(panel_S, BorderLayout.SOUTH);
+		JLabel lblNewLabel_3 = new JLabel("Calcular_peso_ideal");
+		panel_terciario_norte.add(lblNewLabel_3);
 		
-		JPanel panel_W = new JPanel();
-		panel_W.setBackground(Color.LIGHT_GRAY);
-		contentPane.add(panel_W, BorderLayout.WEST);
-		panel_W.setLayout(new BorderLayout(0, 0));
+		JPanel panel_terciario_sur = new JPanel();
+		panel_secundario_w.add(panel_terciario_sur, BorderLayout.SOUTH);
+		panel_terciario_sur.setLayout(new BorderLayout(0, 0));
 		
-		JPanel Panel_N = new JPanel();
-		panel_W.add(Panel_N, BorderLayout.NORTH);
+		JPanel panel_secundario_e = new JPanel();
+		panel_central_principal.add(panel_secundario_e, BorderLayout.EAST);
+		panel_secundario_e.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblCalcularpesoideal = new JLabel("CALCULAR_PESO_IDEAL");
-		Panel_N.add(lblCalcularpesoideal);
+		JPanel panel_terciario_e_norte = new JPanel();
+		panel_secundario_e.add(panel_terciario_e_norte, BorderLayout.NORTH);
+		panel_terciario_e_norte.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_SS = new JPanel();
-		panel_W.add(panel_SS, BorderLayout.SOUTH);
-		panel_SS.setLayout(new BorderLayout(0, 0));
+		JLabel lblNewLabel_2 = new JLabel("Calcular_tasa_metabolica");
+		panel_terciario_e_norte.add(lblNewLabel_2);
 		
-		JPanel panel_res = new JPanel();
-		panel_SS.add(panel_res, BorderLayout.WEST);
-		
-		JLabel lblNewLabel = new JLabel("RESULTADO");
-		panel_res.add(lblNewLabel);
-		
-		TextField textField = new TextField();
-		panel_res.add(textField);
-		
-		JPanel panel_button1 = new JPanel();
-		panel_SS.add(panel_button1, BorderLayout.EAST);
-		panel_button1.setLayout(new BorderLayout(0, 0));
-		
-		Button button = new Button("Calcular");
-		panel_button1.add(button, BorderLayout.NORTH);
-		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new BorderLayout(0, 0));
+		JPanel panel_terciario_e_sur = new JPanel();
+		panel_secundario_e.add(panel_terciario_e_sur, BorderLayout.SOUTH);
 		this.pack();
 	}
 
