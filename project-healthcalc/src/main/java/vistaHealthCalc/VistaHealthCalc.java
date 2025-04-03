@@ -20,24 +20,33 @@ import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.SystemColor;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import healthcalc.HealthCalcImpl;
 
 public class VistaHealthCalc extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField res_peso_ideal;
-	private JTextField res_meta;
 	private JTextField altura_peso_ideal;
 	private JTextField peso_meta;
 	private JTextField altura_meta;
+	private JTextField res_meta;
+	private JTextField res_peso_ideal;
+	//private HealthCalcImpl calculadora;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			private HealthCalcImpl calculadora;
+
 			public void run() {
 				try {
+					this.calculadora=new HealthCalcImpl();
 					VistaHealthCalc frame = new VistaHealthCalc();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -81,19 +90,28 @@ public class VistaHealthCalc extends JFrame {
 		panel_secundario_w.add(panel_terciario_sur, BorderLayout.SOUTH);
 		panel_terciario_sur.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel = new JPanel();
-		panel_terciario_sur.add(panel, BorderLayout.WEST);
+		JPanel panel_resultado = new JPanel();
+		panel_terciario_sur.add(panel_resultado, BorderLayout.WEST);
+		panel_resultado.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblNewLabel_8 = new JLabel("Resultado");
+		panel_resultado.add(lblNewLabel_8);
 		
 		res_peso_ideal = new JTextField();
 		res_peso_ideal.setEditable(false);
-		panel.add(res_peso_ideal);
 		res_peso_ideal.setColumns(10);
+		panel_resultado.add(res_peso_ideal);
 		
-		JPanel panel_1 = new JPanel();
-		panel_terciario_sur.add(panel_1, BorderLayout.EAST);
+		JPanel panel__boton = new JPanel();
+		panel_terciario_sur.add(panel__boton, BorderLayout.EAST);
 		
 		Button b_res_peso_ideal = new Button("Calcular");
-		panel_1.add(b_res_peso_ideal);
+		b_res_peso_ideal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Aqui
+			}
+		});
+		panel__boton.add(b_res_peso_ideal);
 		
 		JPanel panel_terciario_central = new JPanel();
 		panel_secundario_w.add(panel_terciario_central, BorderLayout.CENTER);
@@ -140,9 +158,13 @@ public class VistaHealthCalc extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_terciario_e_sur.add(panel_2, BorderLayout.WEST);
 		
+		JLabel lblNewLabel_9 = new JLabel("Resultado");
+		panel_2.add(lblNewLabel_9);
+		
 		res_meta = new JTextField();
-		panel_2.add(res_meta);
+		res_meta.setEditable(false);
 		res_meta.setColumns(10);
+		panel_2.add(res_meta);
 		
 		JPanel panel_3 = new JPanel();
 		panel_terciario_e_sur.add(panel_3, BorderLayout.EAST);
