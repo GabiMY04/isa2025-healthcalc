@@ -41,20 +41,23 @@ public class VistaHealthCalc extends JFrame {
 
         JPanel panel_secundario_w = new JPanel(new BorderLayout());
         panel_secundario_w.setPreferredSize(new Dimension(300, 600));
-        panel_secundario_w.setBackground(Color.LIGHT_GRAY);
+        panel_secundario_w.setBackground(Color.GRAY);
         panel_central_principal.add(panel_secundario_w, BorderLayout.WEST);
 
         JLabel lblPesoIdeal = new JLabel("Calcular_peso_ideal", SwingConstants.CENTER);
         panel_secundario_w.add(lblPesoIdeal, BorderLayout.NORTH);
 
         JPanel panel_central_peso = new JPanel(new GridLayout(2, 2));
+        panel_central_peso.setBackground(Color.LIGHT_GRAY);
         panel_secundario_w.add(panel_central_peso, BorderLayout.CENTER);
-
-        panel_central_peso.add(new JLabel("Altura:"));
+        
+        JLabel lblNewLabel_4 = new JLabel("Altura");
+        panel_central_peso.add(lblNewLabel_4);
         altura_peso_ideal = new JTextField();
         panel_central_peso.add(altura_peso_ideal);
-
-        panel_central_peso.add(new JLabel("Genero:"));
+        
+        JLabel lblNewLabel_5 = new JLabel("Genero");
+        panel_central_peso.add(lblNewLabel_5);
         genero_peso_ideal = new JComboBox<>(new String[]{"Women", "Men"});
         panel_central_peso.add(genero_peso_ideal);
 
@@ -62,7 +65,9 @@ public class VistaHealthCalc extends JFrame {
         panel_secundario_w.add(panel_sur_peso, BorderLayout.SOUTH);
 
         JPanel resultadoPesoPanel = new JPanel();
-        resultadoPesoPanel.add(new JLabel("Resultado"));
+        
+        JLabel lblNewLabel_7 = new JLabel("Resultado peso ideal");
+        resultadoPesoPanel.add(lblNewLabel_7);
         res_peso_ideal = new JTextField(10);
         res_peso_ideal.setEditable(false);
         resultadoPesoPanel.add(res_peso_ideal);
@@ -73,39 +78,47 @@ public class VistaHealthCalc extends JFrame {
 
         JPanel panel_secundario_e = new JPanel(new BorderLayout());
         panel_secundario_e.setPreferredSize(new Dimension(300, 600));
-        panel_secundario_e.setBackground(Color.LIGHT_GRAY);
+        panel_secundario_e.setBackground(Color.GRAY);
         panel_central_principal.add(panel_secundario_e, BorderLayout.EAST);
 
         JLabel lblTMB = new JLabel("Calcular_tasa_metabolica", SwingConstants.CENTER);
         panel_secundario_e.add(lblTMB, BorderLayout.NORTH);
 
         JPanel panel_central_tmb = new JPanel(new GridLayout(4, 2));
+        panel_central_tmb.setBackground(Color.LIGHT_GRAY);
         panel_secundario_e.add(panel_central_tmb, BorderLayout.CENTER);
-
-        panel_central_tmb.add(new JLabel("Altura:"));
+        
+        JLabel lblNewLabel = new JLabel("Altura");
+        panel_central_tmb.add(lblNewLabel);
         altura_meta = new JTextField();
         panel_central_tmb.add(altura_meta);
-
-        panel_central_tmb.add(new JLabel("Peso:"));
+        
+        JLabel lblNewLabel_1 = new JLabel("Peso");
+        panel_central_tmb.add(lblNewLabel_1);
         peso_meta = new JTextField();
         panel_central_tmb.add(peso_meta);
-
-        panel_central_tmb.add(new JLabel("Edad:"));
         edad_meta = new JComboBox<>();
         for (int i = 1; i <= 120; i++) {
             edad_meta.addItem(String.valueOf(i));
         }
+        
+        JLabel lblNewLabel_2 = new JLabel("Edad");
+        panel_central_tmb.add(lblNewLabel_2);
         panel_central_tmb.add(edad_meta);
-
-        panel_central_tmb.add(new JLabel("Genero:"));
+        
+        JLabel lblNewLabel_3 = new JLabel("Genero");
+        panel_central_tmb.add(lblNewLabel_3);
         genero_meta = new JComboBox<>(new String[]{"Women", "Men"});
         panel_central_tmb.add(genero_meta);
 
         JPanel panel_sur_tmb = new JPanel(new BorderLayout());
+        panel_sur_tmb.setBackground(Color.LIGHT_GRAY);
         panel_secundario_e.add(panel_sur_tmb, BorderLayout.SOUTH);
 
         JPanel resultadoTMBPanel = new JPanel();
-        resultadoTMBPanel.add(new JLabel("Resultado"));
+        
+        JLabel lblNewLabel_6 = new JLabel("Resultado TMB");
+        resultadoTMBPanel.add(lblNewLabel_6);
         res_meta = new JTextField(10);
         res_meta.setEditable(false);
         resultadoTMBPanel.add(res_meta);
