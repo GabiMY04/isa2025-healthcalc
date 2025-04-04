@@ -27,6 +27,7 @@
                 throw new IllegalArgumentException("Peso invalido");
             }
             float res=0;
+            gender = Character.toLowerCase(gender);
             switch (gender) {
                     case 'w' -> res=447.593f + 9.247f * weight + 3.098f * height - 4.330f * age;
                     case 'm' -> res=88.362f + 13.397f * weight + 4.799f * height - 5.677f * age;
