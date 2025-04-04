@@ -91,3 +91,18 @@ En el .gitignore se puede observar que se ingnoran los archivos basicos para los
 
 ![alt text](image.png)
 Al compilar todos los test mencionados en los casos de prueba se observa que todos funcionan correctamente.
+
+
+
+# Práctica 4: Interfaz gráfica de usuario
+## Imagen boceto del proyecto
+![alt text](image-2.png)
+Este boceto se ha hecho con la herramienta Pencil que es un sofware gratuito 
+
+## Imagen resultado del proyecto
+![alt text](image-1.png)
+No se ha podido recrear de forma perfecta pero al menos se le da dado un estilo bonito y entendible para todo el mundo.
+
+
+# Informacion adicional
+Al principio del repositorio vera dos archivos `.Jar` creado con Maven ademas de en la carpeta `doc` podra ver las fotos y el archivo creado por la herramienta pencil 
