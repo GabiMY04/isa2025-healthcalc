@@ -1,10 +1,18 @@
 package vistaHealthCalc;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 
-import healthcalc.HealthCalcImpl;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class VistaHealthCalc extends JFrame {
 
@@ -22,10 +30,9 @@ public class VistaHealthCalc extends JFrame {
     private Button b_res_peso_ideal;
     private Button b_res_meta;
 
-    private HealthCalcImpl calculadora;
 
     public VistaHealthCalc() {
-        this.calculadora = new HealthCalcImpl();
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setSize(700, 300);
         setBounds(100, 100, 800, 600);
@@ -149,8 +156,8 @@ public class VistaHealthCalc extends JFrame {
     public void setRes_peso_ideal(String resultado) { res_peso_ideal.setText(resultado); }
     public void setRes_meta(String resultado) { res_meta.setText(resultado); }
 
-    public HealthCalcImpl getCalculadora() { return calculadora; }
-    public void setCalculadora(HealthCalcImpl calculadora) { this.calculadora = calculadora; }
+    //public HealthCalcImpl getCalculadora() { return calculadora; }
+    //public void setCalculadora(HealthCalcImpl calculadora) { this.calculadora = calculadora; }
 
     public static long getSerialversionuid() { return serialVersionUID; }
     
