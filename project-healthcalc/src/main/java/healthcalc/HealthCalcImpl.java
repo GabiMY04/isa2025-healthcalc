@@ -3,6 +3,19 @@
 
 
     public class HealthCalcImpl implements HealthCalc {
+        private static HealthCalcImpl instance;
+    //CREAMOS UN CONSTRUCTOR PRIVADO PARA QUE NO SE PUEDA CREAR MAS DE UNA CLASE DE IMPLEMENTACION
+        private HealthCalcImpl() {
+    
+        }
+
+    //CREAMO EL GETINSTANCE QUE PROCURA QUE NO PASE 
+        public static HealthCalcImpl getInstance() {
+            if (instance == null) {
+                instance = new HealthCalcImpl();
+            }
+            return instance;
+        }
         @Override
         public float idealWeight(int height, char gender) throws Exception {
             if (height>250 || height<140) {
