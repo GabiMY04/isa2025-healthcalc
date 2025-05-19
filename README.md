@@ -106,3 +106,38 @@ No se ha podido recrear de forma perfecta pero al menos se le da dado un estilo 
 
 # Informacion adicional
 Al principio del repositorio vera dos archivos `.Jar` creado con Maven ademas de en la carpeta `doc` podra ver las fotos y el archivo creado por la herramienta pencil 
+
+
+
+# Practica 6: Patrones de diseño
+
+En esta practica nuestro objetivo principal es graficar los diagramas con los diseños que cumplan los requisitos explicados en la practica e implementarlos en nuestro proyecto HealhCalc.
+
+Se usaron los siguientes diseños para llevar a cabo los requisitos de la practica
+
+- `Singleton`: Es el primero que nos piden el cual 
+- `Adapter`:
+- `Proxy`:
+- `Decorator`:
+
+## Proxy
+### Diagrama usado
+### Explicacion implementacion
+### Implementacion main y resultados
+
+
+## Adapter
+### Diagrama usado
+### Explicacion implementacion
+### Implementacion main y resultados
+
+## Proxy
+### Diagrama usado
+### Explicacion implementacion
+### Implementacion main y resultados
+
+
+## Decorator
+### Diagrama usado
+### Explicacion implementacion
+### Implementacion main y resultados
