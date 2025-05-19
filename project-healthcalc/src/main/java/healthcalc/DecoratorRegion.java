@@ -1,7 +1,7 @@
 package healthcalc;
 
 public class DecoratorRegion implements HealthHospital {
-    private HealthHospital hospital;
+    protected  HealthHospital hospital;
     public DecoratorRegion(HealthHospital hospital) {
         this.hospital = hospital;
     }
