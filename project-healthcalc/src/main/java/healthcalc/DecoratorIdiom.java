@@ -1,7 +1,7 @@
 package healthcalc;
 
 public class DecoratorIdiom implements HealthHospital{
-    private HealthHospital hospital;
+    protected  HealthHospital hospital;
     public DecoratorIdiom(HealthHospital hospital) {
         this.hospital = hospital;
     }
