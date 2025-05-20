@@ -3,6 +3,8 @@ package main;
 import healthcalc.EU;
 import healthcalc.Espanyol;
 import healthcalc.HealthAdapter;
+import healthcalc.HealthCalc;
+import healthcalc.HealthCalcImpl;
 import healthcalc.HealthHospital;
 import healthcalc.Ingles;
 import healthcalc.USA;
@@ -10,40 +12,45 @@ import healthcalc.USA;
 public class MainDecorator {
     public static void main(String[] args) {
         try {
-            // 1. Core: convierte metros/gramos → cm/kg
-            HealthHospital core = new HealthAdapter();
+            //HEALTHOSPITAL ADAPTER
+            HealthCalc calc = HealthCalcImpl.getInstance();
+            //Le paso al calculadora 
+            HealthHospital core = new HealthAdapter(calc);
 
-            // 2. Decorators de región
-            HealthHospital eu   = new EU(core);    // sistema métrico europeo
-            HealthHospital usa  = new USA(core);   // sistema imperial americano
 
-            // 3. Decorators de idioma
-            HealthHospital euEs    = new Espanyol(eu);   // EU + Español
-            HealthHospital euEn    = new Ingles(eu);    // EU + Inglés
-            HealthHospital usaEs   = new Espanyol(usa);  // USA + Español
-            HealthHospital usaEn   = new Ingles(usa);   // USA + Inglés
+            // REGION
+            HealthHospital eu   = new EU(core);    
+            HealthHospital usa  = new USA(core);   
 
-            // Parámetros de prueba
-            char   gender = 'm';
-            int    age    = 30;
-            float  height = 1.70f;    // en metros (input para Adapter)
-            int    weight = 65000;    // en gramos (input para Adapter)
+            // IDIOMA
+            HealthHospital euEspanyol    = new Espanyol(eu);   
+            HealthHospital euIngles    = new Ingles(eu);    
+            HealthHospital usaEspanyol   = new Espanyol(usa);  
+            HealthHospital usaIngles   = new Ingles(usa);   
 
-            System.out.println("=== EU + Español ===");
-            euEs.bmr(gender, age, height, weight);
-            euEs.pesoIdeal(gender, height);
 
-            System.out.println("\n=== EU + Inglés ===");
-            euEn.bmr(gender, age, height, weight);
-            euEn.pesoIdeal(gender, height);
+            char   genero = 'm';
+            int    edad    = 30;
+            float  metros = 1.70f;    //metros 
+            int    gramos = 65000;    //gramos 
+            float pies = (float) (metros * 3.28084); //pies
+            int libras = (int) (gramos / 453.59237f); //libras
 
-            System.out.println("\n=== USA + Español ===");
-            usaEs.bmr(gender, age, height, weight);
-            usaEs.pesoIdeal(gender, height);
+            System.out.println(" ------------ EU + Espanyol ------------ ");
+            euEspanyol.bmr(genero, edad, metros, gramos);
+            euEspanyol.pesoIdeal(genero, metros);
 
-            System.out.println("\n=== USA + Inglés ===");
-            usaEn.bmr(gender, age, height, weight);
-            usaEn.pesoIdeal(gender, height);
+            System.out.println(" ------------ EU + Ingles ------------ ");
+            euIngles.bmr(genero, edad, metros, gramos);
+            euIngles.pesoIdeal(genero, metros);
+
+            System.out.println(" ------------ USA + Espanyol ------------ ");
+            usaEspanyol.bmr(genero, edad, pies, libras);
+            usaEspanyol.pesoIdeal(genero, pies);
+
+            System.out.println(" ------------ USA + Ingles ------------ ");
+            usaIngles.bmr(genero, edad, pies, libras);
+            usaIngles.pesoIdeal(genero, pies);
 
         } catch (Exception e) {
             e.printStackTrace();
