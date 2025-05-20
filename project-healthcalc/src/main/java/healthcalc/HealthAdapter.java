@@ -5,6 +5,9 @@ public class HealthAdapter implements HealthHospital{
     public HealthAdapter() {
         calc = HealthCalcImpl.getInstance();
     }
+    public HealthAdapter(HealthCalc calc) {
+        this.calc = calc;
+    }
 
     @Override
     public float pesoIdeal(char gender, float altura) throws Exception {
