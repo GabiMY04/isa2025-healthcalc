@@ -115,29 +115,40 @@ En esta practica nuestro objetivo principal es graficar los diagramas con los di
 
 Se usaron los siguientes diseños para llevar a cabo los requisitos de la practica
 
-- `Singleton`: Es el primero que nos piden el cual 
-- `Adapter`:
-- `Proxy`:
-- `Decorator`:
+- `Singleton`: Es el primero que nos piden el cual se encarga de garantizar que cada clase tenga una unica instancia en todo el sistema de la calculadora, para ello da puntos de acesso global para poder acceder a ella.
+- `Adapter`: Es un patron que permite que dos interfaces que no son compatibles puedan trabajar , para ello adapta los metodos y datos para que sean compatibles.
+- `Proxy`: Es un patron representante el cual controla el acceso a dicho objeto , aqui lo usamos para presentar HealthProxy y ademas usamos la interfaz HealthStats para almacenar datos cuando se utiliza la clase que se protege.
+- `Decorator`: Es un patron que permite añadir funciones , en esta cosa lo usamos para Añadir los idiomas Español e Ingles (DecoratorIdiom) y las regiones de EU y USA (DecoratorRegion).
 
-## Proxy
+## Singleton
 ### Diagrama usado
+![alt text](design_patterns\Diagramas\Diagrama_HealthCalcSingleton.jpg)
 ### Explicacion implementacion
+En la implementacino de codigo no ha sino necesario crear una clase Singleton sino que ha habido que crear una funcion `getInstance()` en la clase `HealthCalcImpl.java` para que se controle la instancia y el acesso a la variable que en este caso ahora es privada.
 ### Implementacion main y resultados
+En la clase `Main` la unica diferencia que ha habido es la implementacion de la clase **"HealthCalcImpl modelo = HealthCalcImpl.getInstance();"** Por lo que los resultados son los mismo que la practica anterior.
 
 
 ## Adapter
 ### Diagrama usado
+![alt text](design_patterns\Diagramas\Diagrama_HealthCalcAdapter.jpg)
 ### Explicacion implementacion
+Se creo una clase `HealthHospital` que seria la clase que se debe adaptar a la clase `HealthCalc` , para aplicar el adaptador se creo la clase `HealthAdapter.java` el cual modifica los datos introducidos por el HealthHospital (el peso en gramos y la altura metros) para modificarlos y adaptarlos a HealthCalc (el peso en kg y la altura en cm)
 ### Implementacion main y resultados
+![alt text](doc\ResultadosAdapter.png)
 
 ## Proxy
 ### Diagrama usado
+![alt text](design_patterns\Diagramas\Diagrama_HealthCalcProxy.jpg)
 ### Explicacion implementacion
+Para implementar el patron se creo la clase `HealthProxy` que implementa la interfaz `HealthStats` , la clase HealthProxy lo que hara es que por cada llamada a la clase HealthHospital almacenara las metricas mostradas en el diagrama y calculara la media de dichas metricas.
 ### Implementacion main y resultados
-
+![alt text](doc\ResultadosProxy.png)
 
 ## Decorator
 ### Diagrama usado
+![alt text](design_patterns\Diagramas\Diagrama_HealthCalcDecorator.jpg)
 ### Explicacion implementacion
+Para hacer la implementacion fue necesario crear varias clases, `DecoratorIdiom` el cual es la clase padre de `Ingles.java` y `Espanyol.java` las cuales son las clases hijas que devuelven mensajes en los respectivos idiomas sobre la calculadora. Ademas se implementa `DecoratorRegion` el cual es la clase padre de `EU` y `USA` las cuales corresponden a las regiones donde se usa la calculadora EU(Se introduce en gramos y metros) y la calculadora USA(Que introduce pies y libras ).
 ### Implementacion main y resultados
+![alt text](doc\ResultadoDecoration.png)
