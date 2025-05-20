@@ -14,9 +14,15 @@ public class Espanyol extends DecoratorIdiom {
     @Override
     public float bmr(char genero, int edad, float altura, int peso) throws Exception {
         float resultado= super.bmr(genero, edad, altura, peso);
-        float peso_spain = (float) (peso / 1000.0); //Convertir a kg
-        float altura_spain = (float) (altura); //Altura en metros
-        System.out.printf("La persona con una altura de %.2f metros y un peso de %.2f kg tiene un BMR de %.2f.%n", altura_spain, peso_spain, resultado);
+        if (altura < 3) {
+            // EU
+            float pesoKg = (float)peso / 1000f;
+            System.out.printf("La persona con una altura de %.2f metros y un peso de %.2f kg tiene un BMR de %.2f.%n", altura, pesoKg, resultado);
+        } else {
+            // USA
+            System.out.printf("La persona con una altura de %.2f pies y un peso de %.2f libras tiene un BMR de %.2f.%n", altura, (float)peso, resultado);
+        }
+
         return resultado;
     }
 
