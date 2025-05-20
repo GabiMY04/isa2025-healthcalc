@@ -14,9 +14,8 @@ public class USA extends DecoratorRegion{
         HealthHospital espanyol = new Espanyol(super.hospital);
         HealthHospital ingles = new Ingles(super.hospital);
         espanyol.bmr(genero, edad, altura, peso);
-        ingles.bmr(genero, edad, altura, peso);
-
-        return super.bmr(genero, edad, altura, peso);
+        float resultado_ingles=ingles.bmr(genero, edad, altura, peso);
+        return resultado_ingles;
 
     }
 }
