@@ -11,7 +11,8 @@ Descripcion:
 Se ha eliminado la clase HealthProxy debido a que no se usa por ninguna clase y fue un error de otra practica la estrategia proxy se hace en un propio HealthCalcImpl
 
 Cambios manuales:
-Clase HealthProxy eliminada , 95 lineas de codigo eliminadas de dicha clase
+- Clase HealthProxy eliminada
+- 95 lineas de codigo eliminadas de dicha clase
 
 
 
@@ -26,18 +27,27 @@ Descripcion:
 Se ha eliminado la clase MainProxy debido a que no existe HealthProxy y realmente era un Main de prueba
 
 Cambios manuales:
-Clase HealthProxy eliminada , 19 lineas de codigo eliminadas de dicha clase
+- 1 clase HealthProxy eliminada
+- 19 lineas de codigo eliminadas de dicha clase
 
 
 ___Tercer refactoring___
-Bad smell: Primiteve obsession , uso excesivo primiticos
+Bad smell: Primiteve obsession , uso excesiva de variables primitivas
 
 Refactoring usado: Introduce Parameter Object, reemplazarlos por un objeto Person
 
 Tipo: Method refactoring
 
 Descripcion: 
-Se modificara en todas las interfaces y clases la utilizacion de variables primitivas por el objeto Person
+Se modificara en todas las interfaces y clases la utilizacion de variables primitivas(genero , altura, edad, peso) por el objeto Person
 
 Cambios manuales:
-Clase HealthProxy eliminada , 19 lineas de codigo eliminadas de dicha clase
+
+- 2 interfaces modificadas (HealthCalc, HealthHospital)
+- 7 clases adaptadas (HealthCalcImpl, HealthAdapter, EU, USA, Ingles, Espanyol, HealthCalcController)
+- 11 métodos refactorizados para usar Person
+- 1 nueva interfaz Person 
+- 1 nueva clase PersonImpl 
+- 1 nuevo enum Gender añadido
+- 2 nuevas clases CardiovascularMetrics y MetabolicMetrics
+- Aproximadamente 176 lineas modificadas en total (Segun los commits de git)
