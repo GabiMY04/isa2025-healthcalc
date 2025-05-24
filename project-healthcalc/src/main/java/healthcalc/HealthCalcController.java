@@ -24,9 +24,10 @@ public class HealthCalcController {
             int altura = Integer.parseInt(alturaStr);
 
             String genero = vista.getGeneroPesoIdeal();
-            char generoChar = genero.toLowerCase().charAt(0);
+            Gender gender = genero.toLowerCase().charAt(0) == 'm' ? Gender.MALE : Gender.FEMALE;
+            Person p = new PersonImpl(0, altura, 0, gender);
 
-            double resultado = modelo.idealWeight(altura, generoChar);
+            double resultado = modelo.idealWeight(p);
             vista.setRes_peso_ideal(String.format("%.2f kg", resultado));
         } catch (NumberFormatException ex) {
             vista.setRes_peso_ideal("Altura invalida");
@@ -44,14 +45,15 @@ public class HealthCalcController {
             int altura = Integer.parseInt(alturaStr);
 
             String genero = vista.getGeneroMeta();
-            char generoChar = genero.toLowerCase().charAt(0);
+            Gender gender = genero.toLowerCase().charAt(0) == 'm' ? Gender.MALE : Gender.FEMALE;
 
             String pesoStr = vista.getPeso_meta();
             float peso = Float.parseFloat(pesoStr);
 
             int edad = vista.getEdad_meta();
+            Person p = new PersonImpl(peso, altura, edad, gender);
 
-            float resultado = modelo.basalMetabolicRate(peso, altura, edad, generoChar);
+            float resultado = modelo.basalMetabolicRate(p);
             vista.setRes_meta(String.format("%.2f j/seg", resultado));
         } catch (NumberFormatException ex) {
             vista.setRes_meta("Alguno de los datos introducidos no es correcto");
