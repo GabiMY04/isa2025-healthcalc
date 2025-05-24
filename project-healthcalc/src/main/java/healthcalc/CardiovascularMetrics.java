@@ -5,7 +5,7 @@ public class CardiovascularMetrics {
     HealthCalc healthCalc;
 
     public CardiovascularMetrics(Person person) {
-        this.person = new PersonImpl();
+        this.person = person;
         this.healthCalc = HealthCalcImpl.getInstance();
     }
     public double getIdealBodyWeight() throws Exception {
