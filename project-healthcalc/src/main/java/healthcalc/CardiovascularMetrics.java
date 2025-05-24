@@ -11,7 +11,7 @@ public class CardiovascularMetrics {
     public double getIdealBodyWeight() throws Exception {
         char gender = (person.gender() == Gender.MALE) ? 'm' : 'w';
         int age = person.age();
-        double res=healthCalc.idealWeight(age, gender);
+        double res=healthCalc.idealWeight(person);
         
         return res;
     }
