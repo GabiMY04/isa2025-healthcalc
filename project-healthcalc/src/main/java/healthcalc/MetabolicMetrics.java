@@ -13,7 +13,7 @@ public class MetabolicMetrics {
         int age = person.age();
         float weight = person.Weight();
         int height = (int) person.height();
-        double res = healthCalc.basalMetabolicRate(weight, height, age, gender);
+        double res = healthCalc.basalMetabolicRate(person);
         return res;
     }
 }
