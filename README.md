@@ -152,3 +152,67 @@ Para implementar el patron se creo la clase `HealthProxy` que implementa la inte
 Para hacer la implementacion fue necesario crear varias clases, `DecoratorIdiom` el cual es la clase padre de `Ingles.java` y `Espanyol.java` las cuales son las clases hijas que devuelven mensajes en los respectivos idiomas sobre la calculadora. Ademas se implementa `DecoratorRegion` el cual es la clase padre de `EU` y `USA` las cuales corresponden a las regiones donde se usa la calculadora EU(Se introduce en gramos y metros) y la calculadora USA(Que introduce pies y libras ).
 ### Implementacion main y resultados
 ![alt text](doc\ResultadoDecoration.png)
+
+
+
+# Practica 7: Refactoring
+
+## Fichero `.txt`
+
+### Primer refactorig
+____Primer refactoring___
+Bad smell: Dead Code o Codigo muerto
+
+Refactoring usado: Eliminar clase
+
+Tipo: Class refactoring
+
+Descripcion: 
+Se ha eliminado la clase HealthProxy debido a que no se usa por ninguna clase y fue un error de otra practica la estrategia proxy se hace en un propio HealthCalcImpl
+
+Cambios manuales:
+- Clase HealthProxy eliminada
+- 95 lineas de codigo eliminadas de dicha clase
+
+### Segundo refactoring
+__Segundo refactoring___
+Bad smell: Dead Code o Codigo muerto MainProxy
+
+Refactoring usado: Eliminar clase
+
+Tipo: Class refactoring
+
+Descripcion: 
+Se ha eliminado la clase MainProxy debido a que no existe HealthProxy y realmente era un Main de prueba
+
+Cambios manuales:
+- 1 clase HealthProxy eliminada
+- 19 lineas de codigo eliminadas de dicha clase
+
+### Tercer refactoring
+___Tercer refactoring___
+Bad smell: Primiteve obsession , uso excesiva de variables primitivas
+
+Refactoring usado: Introduce Parameter Object, reemplazarlos por un objeto Person
+
+Tipo: Method refactoring
+
+Descripcion: 
+Se modificara en todas las interfaces y clases la utilizacion de variables primitivas(genero , altura, edad, peso) por el objeto Person
+
+Cambios manuales:
+
+- 2 interfaces modificadas (HealthCalc, HealthHospital)
+- 7 clases adaptadas (HealthCalcImpl, HealthAdapter, EU, USA, Ingles, Espanyol, HealthCalcController)
+- 11 métodos refactorizados para usar Person
+- 1 nueva interfaz Person 
+- 1 nueva clase PersonImpl 
+- 1 nuevo enum Gender añadido
+- 2 nuevas clases CardiovascularMetrics y MetabolicMetrics
+- Aproximadamente 176 lineas modificadas en total (Segun los commits de git)
+
+## Resultados de la compilacion y el test
+
+### mvn compile
+
+### mvn test
