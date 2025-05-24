@@ -156,6 +156,7 @@ Para hacer la implementacion fue necesario crear varias clases, `DecoratorIdiom`
 
 
 # Practica 7: Refactoring
+En esta practica se trata el tema de la mejora de codigo para una mayor compresion o diminucion de la complejidad del codigo.
 
 ## Fichero `.txt`
 
@@ -214,5 +215,11 @@ Cambios manuales:
 ## Resultados de la compilacion y el test
 
 ### mvn compile
-
+En esta imagen se muestra que compila perfectamente el proyecto
+![alt text](doc\CompilacionCompile_practica7.png)
 ### mvn test
+En la imagen se muestra que de los 11 test no ha habido ningun fallo
+![alt text](doc\CompilacionTest_practica7.png)
+
+## Resultados interfaz grafica
+![Descripción del GIF](doc\Prueba_compilacion.gif)
