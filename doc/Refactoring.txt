@@ -27,3 +27,17 @@ Se ha eliminado la clase MainProxy debido a que no existe HealthProxy y realment
 
 Cambios manuales:
 Clase HealthProxy eliminada , 19 lineas de codigo eliminadas de dicha clase
+
+
+___Tercer refactoring___
+Bad smell: Primiteve obsession , uso excesivo primiticos
+
+Refactoring usado: Introduce Parameter Object, reemplazarlos por un objeto Person
+
+Tipo: Method refactoring
+
+Descripcion: 
+Se modificara en todas las interfaces y clases la utilizacion de variables primitivas por el objeto Person
+
+Cambios manuales:
+Clase HealthProxy eliminada , 19 lineas de codigo eliminadas de dicha clase
