@@ -18,7 +18,7 @@ public interface HealthCalc {
 	 * @return 		 	The ideal weight of the person (kg).
 	 * @throws Exception 
 	 */
-	public float idealWeight(int height, char gender) throws Exception;
+	public float idealWeight(Person person) throws Exception;
 	
 	/**
 	 * Calculate the Basal Metabolic Rate (BMR) of a person with the Harris-Benedict formula:
@@ -33,5 +33,5 @@ public interface HealthCalc {
 	 * @throws Exception
 	 */
 	
-	public float basalMetabolicRate(float weight, int height, int age, char gender) throws Exception;
+	public float basalMetabolicRate(Person person) throws Exception;
 }
