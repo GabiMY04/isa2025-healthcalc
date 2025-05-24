@@ -6,13 +6,13 @@ public class EU extends DecoratorRegion{
         super(hospital);
     }
     @Override
-    public float pesoIdeal(char gender, float altura) throws Exception {
-        return super.pesoIdeal(gender, altura);
+    public float pesoIdeal(Person person) throws Exception {
+        return super.pesoIdeal(person);
     }
 
     @Override
-    public float bmr(char genero, int edad, float altura, int peso) throws Exception {
-        return super.bmr(genero, edad, altura, peso);
+    public float bmr(Person person) throws Exception {
+        return super.bmr(person);
     }
 
 
