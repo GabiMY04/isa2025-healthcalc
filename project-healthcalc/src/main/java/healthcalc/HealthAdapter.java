@@ -10,19 +10,22 @@ public class HealthAdapter implements HealthHospital{
     }
 
     @Override
-    public float pesoIdeal(char gender, float altura) throws Exception {
+    public float pesoIdeal(Person person) throws Exception {
         //Altura en metros
-        float altura1 = altura * 100f;
-        return calc.idealWeight((int) altura1, gender);
+        float altura1 = person.height() * 100f;
+        
+        Person p = new PersonImpl(person.Weight(), altura1,person.age(), person.gender());
+        return calc.idealWeight(p);
 
     }
 
     @Override
-    public float bmr(char genero, int edad, float altura, int peso) throws Exception {
+    public float bmr(Person person) throws Exception {
         //Peso en gramos
-        float peso1 = peso / 1000f;
-        float altura1 = altura * 100f;
-        return calc.basalMetabolicRate(peso1, (int) altura1, edad, genero);
+        float peso1 = person.Weight() / 1000f;
+        float altura1 = person.height() * 100f;
+        Person p = new PersonImpl(peso1, altura1, person.age(),person.gender());
+        return calc.basalMetabolicRate(p);
         
     }
 
