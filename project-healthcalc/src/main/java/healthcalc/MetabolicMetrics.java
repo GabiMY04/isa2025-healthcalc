@@ -9,10 +9,6 @@ public class MetabolicMetrics {
         this.healthCalc = HealthCalcImpl.getInstance();
     }
     public double basalMetabolicRate() throws Exception {
-        char gender = (person.gender() == Gender.MALE) ? 'm' : 'w';
-        int age = person.age();
-        float weight = person.Weight();
-        int height = (int) person.height();
         double res = healthCalc.basalMetabolicRate(person);
         return res;
     }
