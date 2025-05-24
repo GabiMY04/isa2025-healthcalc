@@ -12,3 +12,18 @@ Se ha eliminado la clase HealthProxy debido a que no se usa por ninguna clase y 
 
 Cambios manuales:
 Clase HealthProxy eliminada , 95 lineas de codigo eliminadas de dicha clase
+
+
+
+__Segundo refactoring___
+Bad smell: Dead Code o Codigo muerto MainProxy
+
+Refactoring usado: Eliminar clase
+
+Tipo: Class refactoring
+
+Descripcion: 
+Se ha eliminado la clase MainProxy debido a que no existe HealthProxy y realmente era un Main de prueba
+
+Cambios manuales:
+Clase HealthProxy eliminada , 19 lineas de codigo eliminadas de dicha clase
