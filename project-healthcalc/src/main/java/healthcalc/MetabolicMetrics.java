@@ -5,7 +5,7 @@ public class MetabolicMetrics {
     HealthCalc healthCalc;
 
     public MetabolicMetrics(Person person) {
-        this.person = new PersonImpl();
+        this.person = person;
         this.healthCalc = HealthCalcImpl.getInstance();
     }
     public double basalMetabolicRate() throws Exception {
