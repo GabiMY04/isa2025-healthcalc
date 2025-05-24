@@ -1,0 +1,14 @@
+
+
+____Primer refactoring___
+Bad smell: Dead Code o Codigo muerto
+
+Refactoring usado: Eliminar clase
+
+Tipo: Class refactoring
+
+Descripcion: 
+Se ha eliminado la clase HealthProxy debido a que no se usa por ninguna clase y fue un error de otra practica la estrategia proxy se hace en un propio HealthCalcImpl
+
+Cambios manuales:
+Clase HealthProxy eliminada , 95 lineas de codigo eliminadas de dicha clase
