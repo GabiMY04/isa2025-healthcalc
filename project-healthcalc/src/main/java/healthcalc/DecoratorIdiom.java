@@ -7,13 +7,13 @@ public class DecoratorIdiom implements HealthHospital{
     }
 
     @Override
-    public float pesoIdeal(char gender, float altura) throws Exception {
-        return hospital.pesoIdeal(gender, altura);
+    public float pesoIdeal(Person person) throws Exception {
+        return hospital.pesoIdeal(person);
     }
 
     @Override
-    public float bmr(char genero, int edad, float altura, int peso) throws Exception {
-        return hospital.bmr(genero, edad, altura, peso);
+    public float bmr(Person person) throws Exception {
+        return hospital.bmr(person);
     }
 
 }
