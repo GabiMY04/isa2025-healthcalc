@@ -21,7 +21,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion para genero  invalido en la funcion idealWeight")
 	public void idealWeight_genero_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='g';
 		int height=163;
 		//Act
@@ -33,7 +33,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion para genero  invalido en la funcion basalMetabolicRate ")
 	public void basalMetabolicRate_genero_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='g';
 		int height=163;
 		int age=18;
@@ -47,7 +47,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion altura invalida en la fucnion idealWeight")
 	public void idealWeight_altura_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=500;
 		//Act
@@ -60,7 +60,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion altura invalida en la fucnion basalMetabolicRate")
 	public void basalMetabolicRate_altura_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=500;
 		int age=18;
@@ -75,7 +75,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion edad invalida en la fucnion basalMetabolicRate")
 	public void basalMetabolicRate_edad_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=163;
 		int age=300;
@@ -90,7 +90,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobacion peso  invalido en la fucnion basalMetabolicRate")
 	public void basalMetabolicRate_peso_invalido() {
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=163;
 		int age=23;
@@ -105,7 +105,7 @@ public class HealthCalcTest {
 	@DisplayName("Calcular el peso ideal de una mujer")
 	public  void idealWeight_women() throws Exception{
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=163;
 		//Act
@@ -118,7 +118,7 @@ public class HealthCalcTest {
 	@DisplayName("calcular el peso ideal de un hombre")
 	public  void idealWeight_men() throws Exception{
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='m';
 		int height=163;
 		//Act
@@ -133,7 +133,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobar  la IBM ideal de una mujer")
 	public  void basalMetabolicRate_women() throws Exception{
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='w';
 		int height=163;
 		int age=20;
@@ -148,7 +148,7 @@ public class HealthCalcTest {
 	@DisplayName("Comprobar la IBM ideal de un hombre")
 	public  void basalMetabolicRate_men() throws Exception{
 		//Arrage
-		calc=new HealthCalcImpl();
+		calc= HealthCalcImpl.getInstance();
 		char gender='m';
 		int height=163;
 		int age=20;
