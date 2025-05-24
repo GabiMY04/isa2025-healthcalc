@@ -5,18 +5,20 @@ public class USA extends DecoratorRegion{
         super(hospital);
     }
     @Override
-    public float pesoIdeal(char gender, float altura) throws Exception {
+    public float pesoIdeal(Person person) throws Exception {
         //float alturaPies = (float) (altura * 3.28084);
-        float metros = altura * 0.3048f;
-        return super.pesoIdeal(gender, metros);
+        float metros = person.height() * 0.3048f;
+        Person p = new PersonImpl(person.Weight(), metros, person.age(), person.gender());
+        return super.pesoIdeal(p);
     }
 
     @Override
-    public float bmr(char genero, int edad, float altura, int peso) throws Exception {
+    public float bmr(Person person) throws Exception {
 
-        float metros = altura * 0.3048f;
-        int gramos = (int) (peso * 453.59237f);
-        return super.bmr(genero, edad, metros, gramos);
+        float metros = person.height() * 0.3048f;
+        int gramos = (int) (person.Weight() * 453.59237f);
+        Person p = new PersonImpl(gramos, metros, person.age(), person.gender());
+        return super.bmr(p);
 
     }
 }
