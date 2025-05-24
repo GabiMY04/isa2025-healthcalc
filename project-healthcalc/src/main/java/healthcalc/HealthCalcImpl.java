@@ -20,6 +20,9 @@
         public float idealWeight(Person person) throws Exception {
 
         float height=person.height();
+        if (person.gender() == null) {
+        throw new IllegalArgumentException("Genero invalido");
+        }
         char gender = (person.gender() == Gender.MALE) ? 'm' : 'w';
         
             if (height>250 || height<140) {
@@ -47,6 +50,8 @@
                 throw new IllegalArgumentException("Altura invalida");
             }else if (weight>300 || weight<30) {
                 throw new IllegalArgumentException("Peso invalido");
+            }else if(person.gender() == null){
+                throw new IllegalArgumentException("Genero invalido");
             }
             float res=0;
             gender = Character.toLowerCase(gender);
