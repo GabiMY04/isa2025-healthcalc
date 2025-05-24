@@ -5,7 +5,7 @@
     public class HealthCalcImpl implements HealthCalc {
         private static HealthCalcImpl instance;
     //CREAMOS UN CONSTRUCTOR PRIVADO PARA QUE NO SE PUEDA CREAR MAS DE UNA CLASE DE IMPLEMENTACION
-        private HealthCalcImpl() {
+        HealthCalcImpl() {
     
         }
 
