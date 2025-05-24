@@ -17,7 +17,11 @@
             return instance;
         }
         @Override
-        public float idealWeight(int height, char gender) throws Exception {
+        public float idealWeight(Person person) throws Exception {
+
+        float height=person.height();
+        char gender = (person.gender() == Gender.MALE) ? 'm' : 'w';
+        
             if (height>250 || height<140) {
                 throw new IllegalArgumentException("Altura invalida");
             }
@@ -31,7 +35,12 @@
             return res;
         }
         @Override
-        public float basalMetabolicRate(float weight, int height, int age, char gender) throws Exception {
+        public float basalMetabolicRate(Person person) throws Exception {
+
+        float weight = person.Weight();
+        float height=person.height();
+        char gender = (person.gender() == Gender.MALE) ? 'm' : 'w';
+        int age = person.age();
             if(age<5 || age>100){
                 throw new IllegalArgumentException("Edad invalida");
             }else if (height>250 || height<140) {
