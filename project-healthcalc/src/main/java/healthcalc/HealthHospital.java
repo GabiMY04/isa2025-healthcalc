@@ -13,7 +13,7 @@ public interface HealthHospital {
 	 * @return 		 	The ideal weight of the person (kg).
 	 * @throws Exception 
 	 */
-	public float pesoIdeal(char gender, float altura) throws Exception;
+	public float pesoIdeal(Person person) throws Exception;
     	/**
 	 * Calculate the Basal Metabolic Rate (BMR) of a person with the Harris-Benedict formula:
 	 * For men: BMR = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age
@@ -27,5 +27,5 @@ public interface HealthHospital {
 	 * @throws Exception
 	 */
 	
-	public float bmr(char genero, int edad, float altura, int peso) throws Exception;
+	public float bmr(Person person) throws Exception;
 }
